@@ -1,0 +1,70 @@
+<%- include("header"); -%>
+
+<hr class="white-hr">
+
+<div class="container-fluid">
+  
+    <div class="row">
+      
+      <div class="col-sm-3 col-md-6 col-lg-4 col-xl-2 sidebar-left">
+    
+      <a class="active" href="research">Resource Mobilization for Research</a>
+      <a href="innovation">Innovation Ecosystem</a>
+      <a href="res_publication">Research Publication and Awards</a>
+      <a href="feedback.html">Extension Activities </a>
+      <a href="assign_mentors_1.html"> Collaboration</a>
+      </div>
+
+      <div class="col-sm-9 col-md-6 col-lg-8 col-xl-10 container-z">
+
+        <div style="margin-left: 915px; margin-top: 10px;">
+          <a href="/logout"> <button type="submit" class="btn btn-info">LOGOUT</button> </a>
+      </div>
+
+       <div class="container-1">     
+         
+               <div class="bgbox">
+                    <div style="text-align:center" class="wlcm">   
+                            <h2>WELCOME</h2>
+                    </div>
+                </div>
+                
+                <div class="acct_det_h3">
+                        <h3>Account details :</h3>
+                </div>
+                <br>
+                <div class="acct_det_p">
+
+                  <%
+                  if(items.length!=0){
+                  var i=1;
+                  items.forEach(function(rows){
+                  %>
+
+                    <p class="lvalues"><b>Faculty id&nbsp;:&nbsp;</b><span class="lvalues"><%=rows.fac_id %> </span></p> 
+                    <p class="lvalues"><b>Name&nbsp;:&nbsp;</b><span class="lvalues"><%=rows.name %></span></p>
+                    <p class="lvalues"><b>Email&nbsp;:&nbsp;</b><span class="lvalues"><%=rows.email %></span></p>
+                    <p class="lvalues"><b>Department&nbsp;:&nbsp;</b><span class="lvalues"><%=rows.department %></span></p>
+                    <p class="lvalues"><b>Gender&nbsp;:&nbsp;</b><span class="lvalues"><%=rows.gender %></span></p>
+                    <p class="lvalues"><b>Phone no&nbsp;:&nbsp;</b><span class="lvalues"><%=rows.phone %></span></p>
+                    <p class="lvalues"><b>Address&nbsp;:&nbsp;</b><span class="lvalues"><%=rows.address %></span></p>
+                    <p class="lvalues"><b>Salary&nbsp;:&nbsp;</b><span class="lvalues"><%=rows.salary %></span></p>
+                    <p class="lvalues"><b>Designation&nbsp;:&nbsp;</b><span class="lvalues"><%=rows.designation %></span></p>
+                    <%  i++; }) %>
+                    <% } else{ %>
+                      <tr>
+                          <td colspan="7">No Data Found</td>
+                      </tr>
+                  <% } %>
+                </div>
+             
+         </div>
+
+    </div>
+      </div>
+    </div>
+    <hr class="white-hr">
+
+<%- include("footer"); -%>
+
+

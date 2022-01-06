@@ -1,0 +1,31 @@
+<%- include("header"); -%>
+
+<form action="/del_fac" method="POST">  
+  
+    <div class="row sb" style="background-color: aliceblue; text-align: center;">
+      <div class=" " style="background-color: aliceblue;">
+        <br>
+        <h4> Delete Faculty </h4>
+      </div>
+    </div>
+
+      <div class=" " style="background-color: aliceblue;">
+        <label for="name">Fac id</label>
+        <input id="name" name="fac_id" type="text" class="validate" autocomplete="off" data-error="#e1" required >
+        <div id="e1"></div>
+      </div>
+
+
+
+
+    <br>
+    <div class="row sb">
+      <div class="col m6 s12">
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+    </div>
+
+  </form>
+
+
+<%- include("footer"); -%>

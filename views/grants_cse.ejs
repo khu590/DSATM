@@ -1,0 +1,57 @@
+<%- include("header"); -%>
+
+<h1 style="margin-top: 30px;">CSE report</h1>
+
+
+<table class="table" style="background-color: #fff; margin-top: 50px;">
+    <thead>
+      <tr>
+        <th scope="col"> # </th>
+        <th scope="col"> Faculty ID </th>
+        <th scope="col"> Department </th>
+        <th scope="col"> Name of the Project</th>
+        <th scope="col"> Name of the Principal Investigator</th>
+        <th scope="col"> Department of Principal Investigator</th>
+        <th scope="col"> Year of Award</th>
+        <th scope="col"> Funds provided</th>
+        <th scope="col"> Duration (Days) </th>
+        <th scope="col"> Additional Info </th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <%
+      if(items.length!=0){
+      var i=1;
+      items.forEach(function(rows){
+      %>
+       
+      <tr>
+        <th scope="row"> <%= i; %> </th>
+
+        <td> <%=rows.fac_id %> </td>
+        <td> <%=rows.department %> </td>
+        <td> <%=rows.name_project %> </td>
+        <td> <%=rows.name_pi %> </td>
+        <td> <%=rows.dept_pi %> </td>
+        <td> <%=rows.year_of_award %> </td>
+        <td> <%=rows.funds %> </td>
+        <td> <%=rows.date_diff %> </td>
+        <td> <%=rows.additional_info %> </td>
+
+
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
+
+      </tr>
+  
+    </tbody>
+  </table>
+
+
+<%- include("footer"); -%>

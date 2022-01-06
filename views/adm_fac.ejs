@@ -1,0 +1,47 @@
+<%- include("header"); -%>
+
+<div style="margin-left: 1150px; margin-top: 10px;">
+    <a href="/logout"> <button type="submit" class="btn btn-info">LOGOUT</button> </a>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-md-2"></div>
+        <div class="col-lg-6 col-md-8 adm-box" style="margin-top: 25px; margin-bottom: 100px; padding-top: 20px;">
+            
+            <div class="col-lg-12 login-title">
+                Welcome Admin 
+            </div>
+
+            <div class="col-lg-12 login-form">
+                <div class="col-lg-12 login-form">
+                
+                          <a href="/add_fac"> <button type="button" class="btn btn-success ad-btn">Add faculty </button> </a>   
+
+                          <a href="/del_fac"> <button type="button" class="btn btn-danger ad-btn">Delete faculty </button> </a>                   
+
+                            <button type="button" class="btn btn-warning ad-btn">Modify faculty  </button>             
+  
+
+                            <div class="dropdown">
+                                <button class="btn btn-info ad-btn dropbtn">Report</button>
+                                <div class="dropdown-content">
+                                  <a href="/report_grants"> Grants </a>
+                                  <a href="/report_rg"> Research Projects </a>
+                                  
+                                </div>
+                              </div>
+                                                 
+                           <div>
+                               <p style="color: aliceblue;">  Number of teachers recognized as research guides (latest completed academic year) &nbsp;&nbsp; : &nbsp;&nbsp; <%= count %> </p>          
+                           </div>                       
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<%- include("footer"); -%>

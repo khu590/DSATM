@@ -1,0 +1,59 @@
+<%- include("header"); -%>
+
+<h1 style="margin-top: 30px;">Research project report</h1>
+
+
+<table class="table" style="background-color: #fff; margin-top: 50px;">
+    <thead>
+      <tr>
+        <th scope="col"> # </th>
+        <th scope="col"> Faculty ID </th>
+        <th scope="col"> Department </th>
+        <th scope="col"> Name of the Project</th>
+        <th scope="col"> Name of the Principal Investigator</th>
+        <th scope="col"> Department of Principal Investigator</th>
+        <th scope="col"> Year of Award</th>
+        <th scope="col"> Funds provided</th>
+        <th scope="col"> Duration (Days) </th>
+        <th scope="col"> Additional Info </th>
+        <th scope="col"> Additional Info </th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <%
+      if(items.length!=0){
+      var i=1;
+      items.forEach(function(rows){
+      %>
+       
+      <tr>
+        <th scope="row"> <%= i; %> </th>
+
+        <td> <%=rows.fac_id %> </td>
+        <td> <%=rows.name_of_rp %> </td>
+        <td> <%=rows.pi_name %> </td>
+        <td> <%=rows.dept_ri %> </td>
+        <td> <%=rows.year %> </td>
+        <td> <%=rows.funds %> </td>
+        <td> <%=rows.name_of_fa %> </td>
+        <td> <%=rows.date_from %> </td>
+        <td> <%=rows.date_to %> </td>
+        <td> <%=rows.add_in %> </td> 
+
+
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
+
+      </tr>
+  
+    </tbody>
+  </table>
+
+
+<%- include("footer"); -%>
